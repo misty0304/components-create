@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from 'antd';
 
 export default class Showcontent extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class Showcontent extends React.Component {
       });
     };
   }
+
   componentWillReceiveProps(nextProps) {
     this.setState(nextProps);
   }
@@ -30,7 +32,8 @@ export default class Showcontent extends React.Component {
     };
     return (
       <div className="my-box" style={style} >
-        <div className="my-box-tit">Alert</div>
+        <Input placeholder="Basic usage" />
+        <div className="my-box-tit">博客地址：</div>
         <div>{this.state.content}</div>
         <div className="my-box-footer">
           <button onClick={this.hide}>确定</button>
@@ -42,10 +45,8 @@ export default class Showcontent extends React.Component {
 
 Showcontent.propTypes = {
   showText: React.PropTypes.bool.isRequired,
-  content: React.PropTypes.string.isRequired,
 };
 
 Showcontent.defaultProps = {
   showText: false,
-  content: 'http://hu-huan.blog.163.com/',
 };
