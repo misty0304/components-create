@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'dva';
 import { Button } from 'antd';
 import Showcontent from '../components/Showcontent';
@@ -16,6 +17,12 @@ class Note extends React.Component {
       });
     };
   }
+
+  componentDidMount() {
+    //另一个知识点：findDOMNode()获取组件真实DOM
+    console.log(ReactDOM.findDOMNode(this.box));
+  }
+
   render() {
     return (
       <div >
